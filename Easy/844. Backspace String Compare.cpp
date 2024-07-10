@@ -4,12 +4,12 @@ class Solution {
 public:
     bool backspaceCompare(string s, string t) {
         int cnt=0;
-        for(int i=s.size();i>=0;i--){
+        for(int i=s.size()-1;i>=0;i--){
             if(s[i]=='#')cnt++;
             else if(cnt)cnt--,s[i]='#';
         }
         cnt=0;
-        for(int i=t.size();i>=0;i--){
+        for(int i=t.size()-1;i>=0;i--){
             if(t[i]=='#')cnt++;
             else if(cnt)cnt--,t[i]='#';
         }
@@ -28,3 +28,6 @@ public:
         return 1;
     }
 };
+
+// Time Complexity => O(N)
+// Space Complexity => O(1)
