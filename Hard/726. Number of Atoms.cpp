@@ -44,5 +44,5 @@ public:
     }
 };
 
-// Time Complexity  : O(2*N + N log M) => O(N log N); // M is the unique elements added in map;
-// Space Complexity : O(2*N) => O(N);
+// Time Complexity : O(2*N + N log M) => O(N log N); // M is the unique elements added in map;
+// Space Complexity: O(2*N) => O(N);

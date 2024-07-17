@@ -16,7 +16,7 @@ public:
     }
 };
 
-// Time-Complexity => O(N*K) => O(N*N);
-// Space-Complexity => O(N);
+// Time-Complexity : O(N*K) => O(N*N);
+// Space-Complexity: O(N);
 
 // Can't solve the follow-up question of it.

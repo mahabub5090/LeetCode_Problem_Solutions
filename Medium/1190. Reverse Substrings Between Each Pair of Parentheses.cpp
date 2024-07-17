@@ -63,5 +63,5 @@ public:
     }
 };
 
-// Time Complexity => O(2*N)
-// Space Complexity => O(2*N)
+// Time Complexity : O(2*N) => O(N);
+// Space Complexity: O(2*N) => O(N);

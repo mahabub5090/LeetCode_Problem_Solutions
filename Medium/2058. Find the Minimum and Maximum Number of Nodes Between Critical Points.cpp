@@ -31,3 +31,6 @@ public:
         return {mn,mx};
     }
 };
+
+// Time Complexity : O(3*N) => O(N);
+// Space Complexity: O(2*N) => O(N);

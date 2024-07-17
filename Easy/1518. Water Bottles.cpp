@@ -16,6 +16,9 @@ public:
     }
 };
 
+// Time Complexity : O(log N);
+// Space Complexity: O(1);
+
 // way-2 O(1) =>
 
 class Solution {
@@ -24,3 +27,6 @@ public:
         return numBottles+(numBottles-1)/(numExchange-1);
     }
 };
+
+// Time Complexity : O(1);
+// Space Complexity: O(1);

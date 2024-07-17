@@ -11,3 +11,6 @@ public:
         return cnt*1.0/customers.size();
     }
 };
+
+// Time Complexity : O(N);
+// Space Complexity: O(1);
