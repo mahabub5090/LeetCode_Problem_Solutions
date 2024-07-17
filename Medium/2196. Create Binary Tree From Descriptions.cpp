@@ -41,5 +41,5 @@ public:
     }
 };
 
-// Time Complexity => O(N * (2* log N)) => O(N log N);
-// Space Complexity => O(2*N) => O(N);
+// Time Complexity : O(N * (2* log N)) => O(N log N);
+// Space Complexity: O(2*N) => O(N);

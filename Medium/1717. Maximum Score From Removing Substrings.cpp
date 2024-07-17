@@ -32,8 +32,8 @@ public:
     }
 };
 
-// Time Complexity: O(3*N);
-// Space Complexity: O(2*N+1);
+// Time Complexity : O(3*N) => O(N);
+// Space Complexity: O(2*N+1) => O(N);
 
 
 
