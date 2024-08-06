@@ -5,9 +5,7 @@ public:
     int minimumPushes(string word) {
         vector<int>vc(26);
         for(auto &c:word)vc[c-'a']++;
-        sort(vc.begin(),vc.end(),[](int a,int b){
-            return a>b;
-        });
+        sort(vc.begin(),vc.end(),greater<int>());
         int ans=0,cnt=0;
         for(auto &c:vc){
             ans+=c*(1+(cnt++/8));
