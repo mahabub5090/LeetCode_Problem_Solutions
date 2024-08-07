@@ -40,18 +40,18 @@ public:
         if(num==0)return "Zero";
 
         for(auto &val:mp){
-            if(num>=val.first){
-                string a="";
-                if(num>=100){
-                    a=numberToWords(num/val.first)+" ";
-                }
-                string b=val.second;
-                string c = "";
-                if(num%val.first!=0){
-                    c=" "+numberToWords(num%val.first);
-                }
-                return a+b+c;
+            if(val.first>num)continue;
+            string a="";
+            if(num>=100){
+                a=numberToWords(num/val.first)+" ";
+                cout<<a<<endl;
             }
+            string b=val.second;
+            string c = "";
+            if(num%val.first!=0){
+                c=" "+numberToWords(num%val.first);
+            }
+            return a+b+c; 
         }
         return "";
     }
