@@ -10,13 +10,13 @@ public:
 
         int ans=(c=='a'?0:1e9);
         int tt=0;
-        for(int j=1;j<=2*m;j++){
-            if(i+j>vc.size())break;
-            tt+=vc[i+j-1];
+        for(int j=0;j<2*m;j++){
+            if(i+j==vc.size())break;
+            tt+=vc[i+j];
             if(c=='a'){
-                ans=max(ans,tt+dfs('b',i+j,max(j,m),vc));
+                ans=max(ans,tt+dfs('b',i+j+1,max(j+1,m),vc));
             }
-            else ans=min(ans,dfs('a',i+j,max(j,m),vc));
+            else ans=min(ans,dfs('a',i+j+1,max(j+1,m),vc));
         }
         return dp[c-'a'][i][m]=ans;
     }
