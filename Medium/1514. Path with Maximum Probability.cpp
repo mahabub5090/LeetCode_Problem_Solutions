@@ -6,8 +6,7 @@ public:
         vector<double>prob(n,0);
         prob[start_node]=1;
         for(int i=0;i<n;i++){
-            int j=0;
-            bool fg=0;
+            int j=0,fg=0;
             for(auto &c:edges){
                 int u=c[0],v=c[1];
                 if(prob[u]<prob[v]*succProb[j])fg=1;
