@@ -47,10 +47,7 @@ public:
         for(auto &c:ans){
             ListNode *temp2=arrToList(c);
             if(temp2==NULL)fg=1;
-            mainAns.push_back(temp2);
-        }
-        if(fg){
-            while(mainAns.back()==NULL)mainAns.pop_back();
+            else mainAns.push_back(temp2);
         }
         if(k>tt){
             for(int i=tt;i<k;i++){
