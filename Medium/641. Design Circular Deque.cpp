@@ -74,7 +74,7 @@ public:
     }
 };
 
-// Time Complexity : O(N)*O(1);// O(N) for n times call;
+// Time Complexity : O(N)*O(N) => O(N^2);// O(N) for n times call;
 // Space Complexity: O(N);
 
 /**
