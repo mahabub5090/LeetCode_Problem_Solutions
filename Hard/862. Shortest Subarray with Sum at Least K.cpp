@@ -5,14 +5,15 @@ public:
     int shortestSubarray(vector<int>& nums, int k) {
         priority_queue<pair<long long,int>,vector<pair<long long,int>>,greater<>> pq;
         int j=0,n=nums.size(),ans=n+1;
-        vector<long long>pref(n+1);pref[0]=nums[0];
-        for(int i=1;i<n+1;i++)pref[i]=pref[i-1]+nums[i-1];
-        while(j<n+1){   
+        vector<long long>pref(n);
+        for(int i=0;i<n;i++)pref[i]=(i==0?0:pref[i-1])+nums[i];
+        while(j<n){   
             pq.push({pref[j],j}); 
             while(pq.size() && pref[j]-pq.top().first>=k){
                 auto c=pq.top();pq.pop();
                 ans=min(ans,j-c.second);
             }
+            if(pref[j]>=k)ans=min(ans,j+1);
             j++;
         }
         return ans==n+1?-1:ans;
