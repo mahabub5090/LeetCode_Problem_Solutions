@@ -1,4 +1,4 @@
-// Problem Link: https://leetcode.com/problems/find-champion-ii/submissions/1463304985/?envType=daily-question&envId=2024-11-26
+// Problem Link: https://leetcode.com/problems/find-champion-ii/description/?envType=daily-question&envId=2024-11-26
 
 class Solution {
 public:
@@ -11,7 +11,7 @@ public:
         for(int i=0;i<n;i++){
             if(parent[i]==-1)ans.push_back(i);
         }
-        if(ans.size()>1)return -1;
+        if(ans.size()!=1)return -1;
         return ans.back();
     }
 };
