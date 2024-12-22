@@ -10,13 +10,9 @@ public:
         for(auto &c:queries){
             int maxIndex=max(c[0],c[1]);
             int maxHeight=max(heights[c[0]],heights[c[1]]);
-            if(c[0]==c[1] || (c[0]<c[1] && heights[c[0]]<heights[c[1]])){
-                ans[index]=c[1];
-                index++;
-                continue;
-            }
-            if(c[0]>c[1] && heights[c[0]]>heights[c[1]]){
-                ans[index]=c[0];
+            int a=min(c[0],c[1]),b=max(c[0],c[1]);
+            if(a==b || heights[a]<heights[b]){
+                ans[index]=b;
                 index++;
                 continue;
             }
