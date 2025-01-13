@@ -4,21 +4,21 @@ class Solution {
 public:
     int minimumLength(string s) {
         int n=s.size();
-        map<char,int>l,r;
-        for(auto &c:s)r[c]++;
+        vector<int>l(26,0),r(26,0);
+        for(auto &c:s)r[c-'a']++;
         int cnt=0;
         for(auto &c:s){
-            if(l[c] && r[c]-1>0){
-                int mn=min(l[c],r[c]-1);
+            if(l[c-'a'] && r[c-'a']-1>0){
+                int mn=min(l[c-'a'],r[c-'a']-1);
                 cnt+=mn*2;
-                l[c]-=mn;
-                r[c]-=mn;
+                l[c-'a']-=mn;
+                r[c-'a']-=mn;
             }
-            l[c]++,r[c]--;
+            l[c-'a']++,r[c-'a']--;
         }
         return n-cnt;
     }
 };
 
 // Time Complexity : O(2*N) => O(N);
-// Space Complexity: O(2*N) => O(N);
+// Space Complexity: O(2*26) => O(1);
