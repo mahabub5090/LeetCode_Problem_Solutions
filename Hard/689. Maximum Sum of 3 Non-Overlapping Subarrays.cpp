@@ -36,7 +36,7 @@ public:
         int n=nums.size()-k+1;
         vector<int>sums(n,0);
         int windowSum=0;
-
+        
         for(int i=0;i<k;i++) {
             windowSum+=nums[i];
         }
