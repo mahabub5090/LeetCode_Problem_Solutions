@@ -1,40 +1,35 @@
-// Problem Link: 
+// Problem Link: https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/description/
 
 class Solution {
-    public:
-         vector<int>res;
-         int backtrack(int n, int l, auto& arr, auto& used) {
-            if(l==arr.size()) {
-                res=arr;
-                return 1;
-            }
-    
-            if(arr[l]!=-1)return backtrack(n,l+1,arr,used);
-    
-            for (int num=n;num>=1;--num) {
-                if (used[num]) continue;
-    
-                int r = (num == 1) ? l : l + num;
-                if (r<arr.size() && arr[r]==-1) {
-                    arr[l]=arr[r]=num;
-                    used[num]=1;
-    
-                    if (backtrack(n, l + 1, arr, used))return 1;
-                    arr[l]=arr[r]=-1;
-                    used[num]=0;
-                }
-            }
-    
-            return 0;
+public:
+    int backtrack(int i,auto &ans,auto &used) {
+        int n=ans.size();
+        if(i==n)return 1;
+        if(ans[i]!=-1)return backtrack(i+1,ans,used);
+
+        for(int j=used.size()-1;j>=1;j--){
+            if(used[j])continue;
+            if(j>1 && (i+j>=n || ans[i+j]!=-1))continue;
+
+            used[j]++;
+            ans[i]=j;  
+            if(j>1)ans[i+j]=j;
+
+            if(backtrack(i+1,ans,used))return 1;
+
+            used[j]=0;
+            ans[i]=-1;
+            if(j>1)ans[i+j]=-1;
         }
-        vector<int> constructDistancedSequence(int n) {
-            res.clear();
-            vector<int> arr(2 * n - 1, -1);
-            vector<bool> used(n + 1, false);
-            backtrack(n, 0, arr, used);
-            return res;
-        }
-    };
-    
-    // Time Complexity : O(2^N) * O(N^2) => O(2^N);
-    // Space Complexity: O(N^2);
+        return 0;
+    }
+    vector<int> constructDistancedSequence(int n) {
+        vector<int>ans((2*n)-1,-1);
+        vector<int>used(n+1,0);
+        backtrack(0,ans,used);
+        return ans;
+    }
+};
+
+// Time Complexity : O(2^N) * O(N) => O(2^N);
+// Space Complexity: O(N^2);
