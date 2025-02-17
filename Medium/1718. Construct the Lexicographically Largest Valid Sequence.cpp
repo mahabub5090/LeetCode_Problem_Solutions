@@ -31,5 +31,5 @@ public:
     }
 };
 
-// Time Complexity : O(2^N) * O(N) => O(2^N);
+// Time Complexity : O(N!);
 // Space Complexity: O(N^2);
