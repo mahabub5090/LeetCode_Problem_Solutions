@@ -2,9 +2,9 @@
 
 class Solution {
 public:
-    void dfs(int i,auto &graph,auto &vis,auto &comp,int &edges){
+    void dfs(int i,auto &graph,auto &vis,int &comp,int &edges){
         vis[i]=1;
-        comp.push_back(i);
+        comp++;
         edges+=graph[i].size();
 
         for(auto &c:graph[i]){
@@ -23,11 +23,10 @@ public:
             if(vis[i])continue;
 
             int edges=0;
-            vector<int>components;
+            int components=0;
             dfs(i,graph,vis,components,edges);
 
-            int nodeCount=components.size();
-            if(nodeCount*(nodeCount-1)==edges)ans++;
+            if(components*(components-1)==edges)ans++;
         }
         return ans;
     }
