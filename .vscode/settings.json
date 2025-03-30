@@ -2,6 +2,13 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "*.css": "tailwindcss",
-        "map": "cpp"
+        "*.cpp": "cpp",
+        "map": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp"
     }
 }
