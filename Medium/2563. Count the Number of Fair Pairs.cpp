@@ -1,19 +1,18 @@
-// Problem Link: https://leetcode.com/problems/count-the-number-of-fair-pairs/submissions/1451650937/?envType=daily-question&envId=2024-11-13
+// Problem Link: https://leetcode.com/problems/count-the-number-of-fair-pairs/description/?envType=daily-question&envId=2025-04-19
 
 class Solution {
 public:
     long long countFairPairs(vector<int>& nums, int lower, int upper) {
         sort(nums.begin(),nums.end());
-        long long cnt=0,pos=1;
-        for(auto &c:nums){
-            auto up=upper_bound(nums.begin()+pos,nums.end(),upper-c);
-            auto lb=lower_bound(nums.begin()+pos,nums.end(),lower-c);
-            cnt+=up-lb;
-            pos++;
+        long long ans=0;
+        for(int i=0;i<nums.size();i++){
+            int up=upper_bound(nums.begin()+i+1,nums.end(),upper-nums[i])-nums.begin();
+            int lw=lower_bound(nums.begin()+i+1,nums.end(),lower-nums[i])-nums.begin();
+            ans+=up-lw;
         }
-        return cnt;
+        return ans;
     }
 };
 
-// Time Complexity : O(NlogN) + O(N*(2*logN)) => O(NlogN);
+// Time Complexity : O(2*NlogN) => O(NlogN);
 // Space Complexity: O(1);
