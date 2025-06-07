@@ -36,7 +36,7 @@ public:
         int n=board.size();
         makeMap(n);
         getAns(1,0,board);
-        return ans>n*n?-1:ans;  
+        return ans==INT_MAX?-1:ans;  
     }
 };
 
