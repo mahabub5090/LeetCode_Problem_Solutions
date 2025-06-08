@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/lexicographical-numbers/description/?envType=daily-question&envId=2024-09-21
+// Problem Link: https://leetcode.com/problems/lexicographical-numbers/description/?envType=daily-question&envId=2025-06-08
 
 class Solution {
 public:
@@ -18,4 +19,4 @@ public:
 };
 
 // Time Complexity : O(N);
-// Space Complexity: O(N); 
+// Space Complexity: O(log(N)); 
