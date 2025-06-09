@@ -1,4 +1,6 @@
 // Problem Link: https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/description/
+// Problem Link: https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/description/?envType=daily-question&envId=2025-06-09
+
 
 class Solution {
 public:
@@ -26,5 +28,5 @@ public:
     }
 };
 
-// Time Complexity : O(logN^2);
+// Time Complexity : O(log(N^2));
 // Space Complexity: O(1);
