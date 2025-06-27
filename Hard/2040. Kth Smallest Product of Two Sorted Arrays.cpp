@@ -31,5 +31,5 @@ public:
     }
 };
 
-// Time Complexity : O(N*log(n));
+// Time Complexity : O(N*log(N));
 // Space Complexity: O(1);
