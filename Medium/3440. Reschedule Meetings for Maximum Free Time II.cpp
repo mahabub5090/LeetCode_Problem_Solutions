@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-ii/description/
+// Problem Link: https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-ii/description/?envType=daily-question&envId=2025-07-10
 
 class Solution {
 public:
@@ -49,3 +50,46 @@ public:
 
 // Time Complexity : O(2*N) + O(2*NlogN) => O(NlogN);
 // Space Complexity: O(4*N) => O(N);
+
+// Way: 2 =>
+
+class Solution {
+public:
+    int maxFreeTime(int eventTime, vector<int>& startTime, vector<int>& endTime) {
+        int ans=0,n=startTime.size();
+        int lmax=0;
+
+        for(int i=0;i<n;i++){
+            int prev=(i==0?startTime[0]:startTime[i]-endTime[i-1]);
+            int next=(i==n-1?eventTime-endTime[i]:startTime[i+1]-endTime[i]);
+
+            int len=endTime[i]-startTime[i];
+
+            int f=lmax>=len;
+
+            ans=max(ans,prev+next+(f?len:0));
+
+            lmax=max(lmax,prev);
+        }
+
+        int rmax=0;
+
+        for(int i=n-1;i>=0;i--){
+            int prev=(i==n-1?eventTime-endTime[i]:startTime[i+1]-endTime[i]);
+            int next=(i==0?startTime[0]:startTime[i]-endTime[i-1]);
+
+            int len=endTime[i]-startTime[i];
+
+            int f=rmax>=len;
+
+            ans=max(ans,prev+next+(f?len:0));
+
+            rmax=max(rmax,prev);
+        }
+
+        return ans;
+    }
+};
+
+// Time Complexity : O(2*N) => O(N);
+// Space Complexity: O(1);
