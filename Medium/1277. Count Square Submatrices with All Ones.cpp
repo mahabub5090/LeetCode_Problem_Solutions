@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/?envType=daily-question&envId=2024-10-27
+// Problem Link: https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/?envType=daily-question&envId=2025-08-20
 
 #include <vector>
 using namespace std;
@@ -32,5 +33,7 @@ public:
 
 // Time Complexity : O(N*M*(MIN(N,M)^2)) => O(N^4); // Though N<=300,this time complexity got accepted;
 // Space Complexity: O(1);
+
+// Way: 2 =>
 
 
