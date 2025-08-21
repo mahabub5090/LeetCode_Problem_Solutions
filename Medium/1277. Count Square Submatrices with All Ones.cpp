@@ -34,6 +34,34 @@ public:
 // Time Complexity : O(N*M*(MIN(N,M)^2)) => O(N^4); // Though N<=300,this time complexity got accepted;
 // Space Complexity: O(1);
 
-// Way: 2 =>
+// Way: 2 => (Worst One)
 
+class Solution {
+public:
+    int countSquares(vector<vector<int>>& matrix) {
+        int ans=0,m=matrix.size(),n=matrix[0].size();
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(matrix[i][j]){
+                    int minS=min(m-i,n-j);
+                    int f=1;
+                    for(int poss=1;poss<=minS;poss++){
+                        int cnt=0;
+                        for(int k=i;k<i+poss;k++){
+                            for(int l=j;l<j+poss;l++)cnt+=matrix[k][l];
+                        }
+                        if(cnt!=pow(poss,2)){  
+                            ans+=poss-1;
+                            break;
+                        }
+                        if(poss==minS)ans+=minS;
+                    }  
+                }
+            }
+        }
+        return ans;
+    }
+};
 
+// Time Complexity : O(N*M*(MIN(N,M)^3)) => O(N^5); // Though N<=300,somehow time complexity got accepted,but is should be got TLE;
+// Space Complexity: O(1);
