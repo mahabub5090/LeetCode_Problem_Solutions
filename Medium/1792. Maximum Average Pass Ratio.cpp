@@ -58,6 +58,7 @@ public:
             auto c=pq.top();pq.pop();
             pq.push({gain(c[1]+1,c[2]+1),c[1]+1,c[2]+1});
         }
+        
         double ans=0;
         while(pq.size())ans+=pq.top()[1]/pq.top()[2],pq.pop();
         ans/=classes.size();
