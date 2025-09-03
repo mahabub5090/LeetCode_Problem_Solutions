@@ -10,6 +10,7 @@ public:
                 auto a=points[i],b=points[j];
 
                 if(i==j || !(a[0]<=b[0] && a[1]>=b[1]))continue;
+                // if(i==j || (a[0]>b[0] || a[1]<b[1]))continue; // Same as above;
                 if(n==2){
                     ans++;
                     continue;
