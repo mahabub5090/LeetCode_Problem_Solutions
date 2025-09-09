@@ -7,7 +7,7 @@ public:
         long long cnt=0;
         while(base<=num){
             cnt+=1ll*(i+1)/2*(min(base*2-1,num)-base+1);
-            i++;
+            i++;2327. Number of People Aware of a Secret
             base*=2;
         }
         return cnt;
