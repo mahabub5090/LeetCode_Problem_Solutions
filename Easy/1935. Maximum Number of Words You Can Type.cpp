@@ -1,0 +1,1 @@
+// Problem Link: https://leetcode.com/problems/maximum-number-of-words-you-can-type/description/?envType=daily-question&envId=2025-09-15
