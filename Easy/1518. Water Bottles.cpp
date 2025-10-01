@@ -23,7 +23,7 @@ public:
 class Solution {
 public:
     int numWaterBottles(int numBottles, int numExchange) {
-        return numBottles+(numBottles-1)/(numExchange-1);
+        return numBottles+(numBottles-1)/(numExchange-1); // (numBottles-1) for handle some failed cases,like numBottles=4 & numExchange=3;
     }
 };
 
