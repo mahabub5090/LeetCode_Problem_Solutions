@@ -1,22 +1,21 @@
 // Problem Link: https://leetcode.com/problems/water-bottles/description/?envType=daily-question&envId=2024-07-07
+// Probelm Link: https://leetcode.com/problems/water-bottles/description/?envType=daily-question&envId=2025-10-01
 
 // way-1 O(logN) => 
 
 class Solution {
 public:
     int numWaterBottles(int numBottles, int numExchange) {
-        int cnt=0,n=numBottles,x=numExchange,c=0;
-        while(n>=x){
-            c=n%x;
-            n/=x;
-            cnt+=n;
-            n+=c;
+        int ans=numBottles;
+        while(numBottles>=numExchange){
+            ans+=numBottles/numExchange;
+            numBottles=numExchange+numBottles%numExchange;
         }
-        return numBottles+cnt;
+        return ans;
     }
 };
 
-// Time Complexity : O(log N);
+// Time Complexity : O(logN);
 // Space Complexity: O(1);
 
 // way-2 O(1) =>
