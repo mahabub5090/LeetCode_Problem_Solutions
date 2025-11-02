@@ -1,4 +1,4 @@
-// Probblem Link: https://leetcode.com/problems/meeting-rooms-iii/description/?envType=daily-question&envId=2025-07-11
+// Problem Link: https://leetcode.com/problems/meeting-rooms-iii/description/?envType=daily-question&envId=2025-07-11
 
 class Solution {
 public:
