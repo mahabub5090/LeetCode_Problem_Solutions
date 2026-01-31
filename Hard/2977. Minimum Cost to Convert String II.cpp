@@ -5,7 +5,7 @@ public:
     class Trie{
         public:
         
-        Trie* child[26];
+        Trie *child[26];
         int id;
 
         Trie(){
@@ -30,7 +30,7 @@ public:
     long long minimumCost(string source, string target, vector<string>& original, vector<string>& changed, vector<int>& cost) {
         int n=source.size(),m=original.size();
 
-        Trie* root=new Trie();
+        Trie *root=new Trie();
 
         int p=-1;
         vector<vector<int>>G(m*2,vector<int>(m*2,INT_MAX/2));
@@ -57,8 +57,7 @@ public:
             long long base=(i==0?0:dp[i-1]);
             if(source[i]==target[i])update(dp[i],base);
 
-            Trie* u=root;
-            Trie* v=root;
+            Trie *u=root,*v=root;
             for(int j=i;j<n;j++){
                 u=u->child[source[j]-'a'];
                 v=v->child[target[j]-'a'];
