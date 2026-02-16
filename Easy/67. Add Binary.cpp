@@ -32,5 +32,5 @@ public:
 };
 
 // Time Complexity : O(max(i,j)) => O(N);
-// Space Complexity: O(1);
+// Space Complexity: O(max(i,j)) => O(N);
 // here i=a.size()-1,b=b.size()-1;
