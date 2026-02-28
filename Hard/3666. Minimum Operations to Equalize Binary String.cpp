@@ -27,6 +27,7 @@ public:
                 int m2=*it;
                 dist[m2]=dist[m]+1;
                 q.push(m2);
+                
                 it=next(it);
                 node.erase(m2);
             }
@@ -36,4 +37,4 @@ public:
 };
 
 // Time Complexity : O(N) + O(NlogN) => O(NlogN);
-// Space Complexity: O(N+N) => O(N);
+// Space Complexity: O(N+N+N) => O(N);
