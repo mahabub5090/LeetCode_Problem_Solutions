@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/description/?envType=daily-question&envId=2024-10-19
+// Problem Link: https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/description/?envType=daily-question&envId=2026-03-03
 
 // class Solution {
 // public:
@@ -23,17 +24,18 @@ class Solution {
 public:
     char solve(int tt,int k){
         if(tt==1)return '0';
+        
         if(tt/2>=k)return solve(tt/2,k);
-        else if((tt/2)+1<k){
-            char res=solve(tt/2,tt-k+1);
-            return res=='1'?'0':'1';
+        else if(tt/2+1<k){
+            char c=solve(tt/2,tt-k+1);
+            return '0'+(c=='0');
         }
-        return '1';
+
+        return '1'; // [tt/2+1==k];
     }
     char findKthBit(int n, int k) {
         if(n==1)return '0';
-        int tt=pow(2,n)-1;       
-        return solve(tt,k);
+        return solve((1<<n)-1,k);
     }
 };
 
