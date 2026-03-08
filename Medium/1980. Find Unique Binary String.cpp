@@ -1,26 +1,23 @@
 // Problem Link: https://leetcode.com/problems/find-unique-binary-string/description/?envType=daily-question&envId=2025-02-20
+// Problem Link: https://leetcode.com/problems/find-unique-binary-string/description/?envType=daily-question&envId=2026-03-08
 
-class Solution {
+cclass Solution {
 public:
-    void solve(int n,string s,auto &vc){
+    vector<string>vc;
+    void solve(string s,int n){
         if(s.size()==n){
             vc.push_back(s);
             return;
         }
-        solve(n,s+'1',vc);
-        solve(n,s+'0',vc);
+        solve(s+'0',n);
+        solve(s+'1',n);
     }
+
     string findDifferentBinaryString(vector<string>& nums) {
-        int n=nums.size();
-        map<string,int>mp;
-        for(auto &c:nums)mp[c]++;
-        vector<string>vc;
-        solve(n,"",vc);
-        for(auto &c:vc){
-            if(mp[c]==0){
-                return c;
-            }
-        }
+        unordered_set<string>st;
+        for(auto &c:nums)st.insert(c);
+        solve("",nums.size());
+        for(auto &c:vc)if(st.count(c)==0)return c;
         return "";
     }
 };
