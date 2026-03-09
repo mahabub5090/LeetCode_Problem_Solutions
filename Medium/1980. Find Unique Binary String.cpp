@@ -1,7 +1,7 @@
 // Problem Link: https://leetcode.com/problems/find-unique-binary-string/description/?envType=daily-question&envId=2025-02-20
 // Problem Link: https://leetcode.com/problems/find-unique-binary-string/description/?envType=daily-question&envId=2026-03-08
 
-cclass Solution {
+class Solution {
 public:
     vector<string>vc;
     void solve(string s,int n){
