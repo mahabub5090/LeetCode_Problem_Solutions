@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/minimum-total-distance-traveled/description/?envType=daily-question&envId=2024-10-31
+// Problem Link: https://leetcode.com/problems/minimum-total-distance-traveled/description/?envType=daily-question&envId=2026-04-14
 
 class Solution {
 public:
