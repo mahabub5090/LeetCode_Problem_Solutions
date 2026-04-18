@@ -4,7 +4,6 @@ class Solution {
 public:
     int mirror(int num){
         int ans=0;
-        while(num%10==0)num/=10;
         while(num){
             ans=(ans*10)+num%10;
             num/=10;
