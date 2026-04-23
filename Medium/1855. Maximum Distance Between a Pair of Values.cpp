@@ -6,6 +6,7 @@ public:
         int n=nums1.size(),m=nums2.size();
         int j=0,ans=0;
         for(int i=0;i<n;i++){
+            // j=max(j,i);
             while(j<m && nums1[i]<=nums2[j])j++;
             ans=max(ans,j-i-1);
         }
