@@ -1,4 +1,6 @@
 // Problem Link: https://leetcode.com/problems/rotate-string/submissions/1441648636/?envType=daily-question&envId=2024-11-03
+// Problem Link: https://leetcode.com/problems/rotate-string/description/?envType=daily-question&envId=2026-05-03
+
 
 // class Solution {
 // public:
@@ -25,10 +27,11 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-        if(s.size()!=goal.size())return 0;
-        return (s+s).find(goal)!=string::npos;
+        if(s.size()!=goal.size()) return 0;
+        string ss=s+s;
+        return ss.find(goal)!=-1;
     }
 };
 
 // Time Complexity : O(N);
-// Space Complexity: O(1)
+// Space Complexity: O(N);
