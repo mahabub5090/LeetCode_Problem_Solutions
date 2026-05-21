@@ -5,12 +5,12 @@
 // public:
 //     vector<int> findThePrefixCommonArray(vector<int>& A, vector<int>& B) {
 //         int n=A.size(),cnt=0;
-//         vector<int>a(n,0),b(n,0),ans;
+//         vector<int>a(n+1,0),b(n+1,0),ans;
 //         for(int i=0;i<n;i++){
-//             if(b[A[i]-1])cnt++;
-//             a[A[i]-1]++;
-//             if(a[B[i]-1])cnt++;
-//             b[B[i]-1]++;
+//             if(b[A[i]])cnt++;
+//             a[A[i]]++;
+//             if(a[B[i]])cnt++;
+//             b[B[i]]++;
 //             ans.push_back(cnt);
 //         }
 //         return ans;
@@ -18,7 +18,7 @@
 // };
 
 // // Time Complexity : O(N);
-// // Space Complexity: O(N);
+// // Space Complexity: O(N) +O(N) + O(N) => O(N);
 
 // Way: 2 =>
 
