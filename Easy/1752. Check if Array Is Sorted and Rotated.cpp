@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/?envType=daily-question&envId=2025-02-02
+// Problem Link: https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/?envType=daily-question&envId=2026-05-23
 
 // class Solution {
 // public:
@@ -22,16 +23,11 @@
 class Solution {
 public:
     bool check(vector<int>& nums) {
-        int n=nums.size();
-        int cnt=0;
-        for(int i=0;i<n-1;i++){
-            cnt+=nums[i]>nums[i+1];
-        }
-        cnt+=nums[n-1]>nums[0];
-        cout<<cnt<<endl;
-        return cnt<2;
+        int cnt=0, n=nums.size();
+        for(int i=0;i<n-1;i++) cnt+=nums[i]>nums[i+1];
+        return cnt<=1 && (cnt?nums[0]>=nums[n-1]:1);
     }
 };
 
 // Time Complexity : O(N);
-// Time Complexity : O(1);
+// Space Complexity: O(1);
