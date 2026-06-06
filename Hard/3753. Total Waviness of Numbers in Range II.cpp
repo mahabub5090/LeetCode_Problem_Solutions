@@ -50,6 +50,7 @@ public:
         auto [_,tt]=dfs(0,-1,-1,1,1);
         return tt;
     }
+    
 
     long long totalWaviness(long long num1, long long num2) {
         return solve(num2)-solve(num1-1);
