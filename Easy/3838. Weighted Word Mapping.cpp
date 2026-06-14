@@ -14,7 +14,6 @@ public:
     }
 };
 
-// Time Complexity : O(N*M) => O(N^2);
+// Time Complexity : O(N*M);
 // Space Complexity: O(1);
 // N=words.size(), M=words[i].size();
- 
