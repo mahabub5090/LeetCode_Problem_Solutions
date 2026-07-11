@@ -1,36 +1,40 @@
 // Problem Link: https://leetcode.com/problems/count-the-number-of-complete-components/description/?envType=daily-question&envId=2025-03-22
+// Problem Link: https://leetcode.com/problems/count-the-number-of-complete-components/description/?envType=daily-question&envId=2026-07-11
 
 class Solution {
 public:
-    void dfs(int i,auto &graph,auto &vis,int &comp,int &edges){
-        vis[i]=1;
-        comp++;
-        edges+=graph[i].size();
-
-        for(auto &c:graph[i]){
-            if(vis[c]==0)dfs(c,graph,vis,comp,edges);
+    void dfs(int curr, int &compo, int &edges, auto &adj, auto &vis){
+        vis[curr]=1;
+        compo++;
+        edges+=adj[curr].size();
+    
+        for(auto &c:adj[curr]){
+            if(vis[c]) continue;
+            dfs(c,compo,edges,adj,vis);
         }
     }
+
     int countCompleteComponents(int n, vector<vector<int>>& edges) {
-        vector<vector<int>>graph(n);
+        vector<vector<int>> adj(n);
         for(auto &c:edges){
-            graph[c[0]].push_back(c[1]);
-            graph[c[1]].push_back(c[0]);
+            adj[c[0]].push_back(c[1]);
+            adj[c[1]].push_back(c[0]);
         }
+
+        vector<int> vis(n,0);
         int ans=0;
-        vector<int>vis(n,0);
         for(int i=0;i<n;i++){
-            if(vis[i])continue;
+            if(vis[i]) continue;
 
-            int edges=0;
-            int components=0;
-            dfs(i,graph,vis,components,edges);
+            int compo=0, edges=0;
+            dfs(i,compo,edges,adj,vis);
 
-            if(components*(components-1)==edges)ans++;
+            if(compo*(compo-1)==edges) ans++;
         }
         return ans;
     }
 };
 
-// Time Complexity : O(N);
-// Space Complexity: O(N);
+// Time Complexity : O(E) + O(V) => O(E+V);
+// Space Complexity: O(V+E) + O(V) + O(V) => O(V+E);
+// E = edges.size(), V = N and 1 <= N <= 50, 0 <= E <= (V*(N-1))/2;
